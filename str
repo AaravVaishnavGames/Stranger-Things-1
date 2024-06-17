@@ -1,0 +1,176 @@
+def start_game():
+    print("Welcome to the Stranger Things Adventure Game!")
+    print("You are Mike, a brave teenager from Hawkins, Indiana.")
+    print("Your goal is to find your friends and escape the dangers of the Upside Down.")
+    print()
+
+    choice1()
+
+def choice1():
+    print("You find yourself in the forest near Hawkins. It's eerily quiet.")
+    print("1. Search for clues near the old cabin.")
+    print("2. Head towards the Hawkins National Laboratory.")
+    choice = input("What do you choose? (1 or 2): ")
+
+    if choice == '1':
+        cabin()
+    elif choice == '2':
+        laboratory()
+    else:
+        print("Invalid choice. Please try again.")
+        choice1()
+
+def cabin():
+    print("\nYou arrive at the old cabin. The door is slightly ajar.")
+    print("1. Enter the cabin.")
+    print("2. Look around the outside of the cabin.")
+    choice = input("What do you choose? (1 or 2): ")
+
+    if choice == '1':
+        inside_cabin()
+    elif choice == '2':
+        outside_cabin()
+    else:
+        print("Invalid choice. Please try again.")
+        cabin()
+
+def laboratory():
+    print("\nYou reach the Hawkins National Laboratory. The gate is open.")
+    print("1. Enter the laboratory.")
+    print("2. Look for another way in.")
+    choice = input("What do you choose? (1 or 2): ")
+
+    if choice == '1':
+        inside_laboratory()
+    elif choice == '2':
+        alternative_entry()
+    else:
+        print("Invalid choice. Please try again.")
+        laboratory()
+
+def inside_cabin():
+    print("\nInside the cabin, you find a map with strange markings.")
+    print("1. Take the map and leave.")
+    print("2. Continue searching the cabin.")
+    choice = input("What do you choose? (1 or 2): ")
+
+    if choice == '1':
+        print("\nYou take the map and head back outside. You feel a sense of direction.")
+        choice1()
+    elif choice == '2':
+        print("\nYou find a hidden trapdoor. It might lead to the Upside Down.")
+        print("1. Open the trapdoor.")
+        print("2. Leave the cabin.")
+        choice = input("What do you choose? (1 or 2): ")
+
+        if choice == '1':
+            upside_down()
+        elif choice == '2':
+            choice1()
+        else:
+            print("Invalid choice. Please try again.")
+            inside_cabin()
+    else:
+        print("Invalid choice. Please try again.")
+        inside_cabin()
+
+def outside_cabin():
+    print("\nYou search around the cabin and find fresh footprints leading into the woods.")
+    print("1. Follow the footprints.")
+    print("2. Go back to the cabin.")
+    choice = input("What do you choose? (1 or 2): ")
+
+    if choice == '1':
+        print("\nYou follow the footprints and they lead you to a portal to the Upside Down.")
+        upside_down()
+    elif choice == '2':
+        cabin()
+    else:
+        print("Invalid choice. Please try again.")
+        outside_cabin()
+
+def inside_laboratory():
+    print("\nInside the laboratory, you see flickering lights and hear strange noises.")
+    print("1. Investigate the noises.")
+    print("2. Look for a control room.")
+    choice = input("What do you choose? (1 or 2): ")
+
+    if choice == '1':
+        investigate_noises()
+    elif choice == '2':
+        control_room()
+    else:
+        print("Invalid choice. Please try again.")
+        inside_laboratory()
+
+def alternative_entry():
+    print("\nYou find a ventilation shaft that you can crawl through.")
+    print("1. Enter the ventilation shaft.")
+    print("2. Look for another way in.")
+    choice = input("What do you choose? (1 or 2): ")
+
+    if choice == '1':
+        inside_laboratory()
+    elif choice == '2':
+        laboratory()
+    else:
+        print("Invalid choice. Please try again.")
+        alternative_entry()
+
+def investigate_noises():
+    print("\nYou find a Demogorgon lurking in the shadows!")
+    print("1. Fight the Demogorgon.")
+    print("2. Run away.")
+    choice = input("What do you choose? (1 or 2): ")
+
+    if choice == '1':
+        print("\nYou bravely fight the Demogorgon but are overpowered. Game over.")
+    elif choice == '2':
+        print("\nYou manage to escape and find your way back to the entrance.")
+        choice1()
+    else:
+        print("Invalid choice. Please try again.")
+        investigate_noises()
+
+def control_room():
+    print("\nIn the control room, you find monitors displaying strange activity.")
+    print("1. Look for information about the Upside Down.")
+    print("2. Try to shut down the portal.")
+    choice = input("What do you choose? (1 or 2): ")
+
+    if choice == '1':
+        print("\nYou find important information about the Upside Down. You now know how to close the portal.")
+        choice1()
+    elif choice == '2':
+        print("\nYou manage to shut down the portal, but alarms start blaring. You must escape quickly.")
+        choice1()
+    else:
+        print("Invalid choice. Please try again.")
+        control_room()
+
+def upside_down():
+    print("\nYou enter the Upside Down. The air is cold and thick with mist.")
+    print("1. Search for your friends.")
+    print("2. Look for a way out.")
+    choice = input("What do you choose? (1 or 2): ")
+
+    if choice == '1':
+        find_friends()
+    elif choice == '2':
+        find_way_out()
+    else:
+        print("Invalid choice. Please try again.")
+        upside_down()
+
+def find_friends():
+    print("\nYou hear faint voices calling your name. You follow them and find your friends!")
+    print("Together, you find a way out of the Upside Down.")
+    print("Congratulations, Mike! You have saved your friends and escaped the Upside Down.")
+    print("Thank you for playing the Stranger Things Adventure Game!")
+
+def find_way_out():
+    print("\nYou wander through the Upside Down but cannot find a way out.")
+    print("Eventually, you are found by a Demogorgon. Game over.")
+
+if __name__ == "__main__":
+    start_game()
